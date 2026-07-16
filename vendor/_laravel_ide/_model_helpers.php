@@ -5,13 +5,33 @@ namespace App\Models {
     /**
      * App\Models\Mahasiswa
      *
-     * @property-read mixed $nama
+     * @property \Illuminate\Support\Carbon|null $updated_at
+     * @property \Illuminate\Support\Carbon|null $created_at
+     * @property string|null $foto
+     * @property string|null $alamat
+     * @property string|null $no_hp
+     * @property mixed $status
+     * @property integer $angkatan
+     * @property string $email
+     * @property int $prodi_id
+     * @property int $id
      * @property-read mixed $nim
+     * @property-read mixed $nama
      * @property-read mixed $status_label
      * @property-read mixed $rata_rata_nilai
      * @property-read \App\Models\Prodi $prodi
      * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Nilai> $nilais
      * @property-read int|null $nilais_count
+     * @method static \Illuminate\Database\Eloquent\Builder<Mahasiswa>|Mahasiswa whereId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Mahasiswa>|Mahasiswa whereProdiId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Mahasiswa>|Mahasiswa whereEmail($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Mahasiswa>|Mahasiswa whereAngkatan($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Mahasiswa>|Mahasiswa whereStatus($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Mahasiswa>|Mahasiswa whereNoHp($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Mahasiswa>|Mahasiswa whereAlamat($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Mahasiswa>|Mahasiswa whereFoto($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Mahasiswa>|Mahasiswa whereCreatedAt($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Mahasiswa>|Mahasiswa whereUpdatedAt($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Mahasiswa>|Mahasiswa newModelQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<Mahasiswa>|Mahasiswa newQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<Mahasiswa>|Mahasiswa query()
@@ -338,9 +358,31 @@ namespace App\Models {
     /**
      * App\Models\Nilai
      *
+     * @property \Illuminate\Support\Carbon|null $updated_at
+     * @property \Illuminate\Support\Carbon|null $created_at
+     * @property integer $tahun_akademik
+     * @property string $semester
+     * @property string $nilai_huruf
+     * @property float $nilai_angka
+     * @property integer $sks
+     * @property string $nama_mk
+     * @property string $kode_mk
+     * @property int $mahasiswa_id
+     * @property int $id
      * @property-read mixed $nilai_lengkap
      * @property-read mixed $warna_badge
      * @property-read \App\Models\Mahasiswa $mahasiswa
+     * @method static \Illuminate\Database\Eloquent\Builder<Nilai>|Nilai whereId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Nilai>|Nilai whereMahasiswaId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Nilai>|Nilai whereKodeMk($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Nilai>|Nilai whereNamaMk($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Nilai>|Nilai whereSks($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Nilai>|Nilai whereNilaiAngka($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Nilai>|Nilai whereNilaiHuruf($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Nilai>|Nilai whereSemester($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Nilai>|Nilai whereTahunAkademik($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Nilai>|Nilai whereCreatedAt($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Nilai>|Nilai whereUpdatedAt($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Nilai>|Nilai newModelQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<Nilai>|Nilai newQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<Nilai>|Nilai query()
@@ -666,8 +708,22 @@ namespace App\Models {
     /**
      * App\Models\Prodi
      *
+     * @property \Illuminate\Support\Carbon|null $updated_at
+     * @property \Illuminate\Support\Carbon|null $created_at
+     * @property mixed $status
+     * @property mixed $jenjang
+     * @property string $nama_prodi
+     * @property string $kode_prodi
+     * @property int $id
      * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Mahasiswa> $mahasiswas
      * @property-read int|null $mahasiswas_count
+     * @method static \Illuminate\Database\Eloquent\Builder<Prodi>|Prodi whereId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Prodi>|Prodi whereKodeProdi($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Prodi>|Prodi whereNamaProdi($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Prodi>|Prodi whereJenjang($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Prodi>|Prodi whereStatus($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Prodi>|Prodi whereCreatedAt($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Prodi>|Prodi whereUpdatedAt($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Prodi>|Prodi newModelQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<Prodi>|Prodi newQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<Prodi>|Prodi query()
@@ -990,8 +1046,24 @@ namespace App\Models {
     /**
      * App\Models\User
      *
+     * @property \Illuminate\Support\Carbon|null $updated_at
+     * @property \Illuminate\Support\Carbon|null $created_at
+     * @property string|null $remember_token
+     * @property string $password
+     * @property \Illuminate\Support\Carbon|null $email_verified_at
+     * @property string $email
+     * @property string $name
+     * @property int $id
      * @property-read \Illuminate\Database\Eloquent\Collection<int, \Illuminate\Notifications\DatabaseNotification> $notifications
      * @property-read int|null $notifications_count
+     * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereName($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereEmail($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereEmailVerifiedAt($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<User>|User wherePassword($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereRememberToken($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereCreatedAt($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereUpdatedAt($value)
      * @method static \Illuminate\Database\Eloquent\Builder<User>|User newModelQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<User>|User newQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<User>|User query()
